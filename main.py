@@ -1,20 +1,35 @@
 import tkinter
+import tkinter.messagebox
 
 
-class MyGUI:
-    def __init__(self):
-        self.main_window = tkinter.Tk()
+def test1():
+    class MyGUI:
+        def __init__(self):
+            self.main_window = tkinter.Tk()
 
-        self.main_window.title('Мой первый GUI!')
+            self.my_button = tkinter.Button(self.main_window,
+                                            text='Нажми на меня!',
+                                            command=self.do_something)
 
-        self.label_1 = tkinter.Label(self.main_window, text='Привет мир!')
-        self.label_2 = tkinter.Label(self.main_window, text='Это моя программа!')
+            self.quit_button = tkinter.Button(self.main_window,
+                                              text='Выйти!',
+                                              command=self.main_window.destroy)
 
-        self.label_1.pack()
-        self.label_2.pack()
+            self.my_button.pack()
+            self.quit_button.pack()
 
-        tkinter.mainloop()
+            tkinter.mainloop()
+
+        def do_something(self):
+            tkinter.messagebox.showinfo('Реакция',
+                                        'Благодарю, что нажали кнопку!')
+
+    my_gui = MyGUI()
+
+
+def test2():
+    pass
 
 
 if __name__ == '__main__':
-    my_gui = MyGUI()
+    pass
